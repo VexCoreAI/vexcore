@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Situs VexCoreAI sedang disiapkan. Kunjungi organisasi kami di GitHub."
+    />
+    <meta name="theme-color" content="#f3efe3" />
+    <title>VexCoreAI | Situs sedang disiapkan</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f3efe3;
+        --ink: #171915;
+        --accent: #a5331d;
+        --page-gutter: clamp(1.25rem, 5vw, 5rem);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-width: 320px;
+        background: var(--paper);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a[href] {
+        color: inherit;
+        cursor: pointer;
+      }
+
+      a[href]:hover {
+        color: var(--accent);
+      }
+
+      a[href]:active {
+        transform: translateY(1px);
+      }
+
+      a[href]:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 5px;
+      }
+
+      .page-shell {
+        display: flex;
+        min-height: 100svh;
+        flex-direction: column;
+        padding: 0 var(--page-gutter);
+      }
+
+      .site-header,
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .site-header {
+        min-height: 5.5rem;
+        border-bottom: 1px solid rgb(23 25 21 / 28%);
+      }
+
+      .wordmark,
+      .site-address,
+      .footer-copy {
+        margin: 0;
+      }
+
+      .wordmark {
+        font-size: 1.05rem;
+        font-weight: 750;
+        letter-spacing: -0.045em;
+      }
+
+      .site-address,
+      .footer-copy {
+        font-size: 0.875rem;
+      }
+
+      .site-main {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(4rem, 10vh, 8rem) 0;
+      }
+
+      .headline {
+        margin: 0;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: clamp(4.25rem, 19vw, 16rem);
+        font-weight: 500;
+        letter-spacing: -0.055em;
+        line-height: 0.76;
+        text-transform: none;
+      }
+
+      .headline span {
+        display: block;
+      }
+
+      .headline span:last-child {
+        padding-top: 0.1em;
+        color: var(--accent);
+        text-align: right;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(10rem, 0.8fr) minmax(0, 1.2fr);
+        align-items: end;
+        gap: clamp(2rem, 8vw, 8rem);
+        margin: clamp(3rem, 8vw, 7rem) 0 0 auto;
+        width: min(100%, 48rem);
+      }
+
+      .status,
+      .invitation {
+        margin: 0;
+      }
+
+      .status {
+        max-width: 13rem;
+        color: var(--accent);
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
+        font-weight: 650;
+        line-height: 1.35;
+      }
+
+      .invitation {
+        max-width: 30rem;
+        font-size: clamp(1.15rem, 2.3vw, 1.8rem);
+        line-height: 1.35;
+      }
+
+      .github-link {
+        display: inline-flex;
+        min-height: 3rem;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding: 0.65rem 0;
+        border-bottom: 2px solid var(--ink);
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 140ms ease, border-color 140ms ease;
+      }
+
+      .github-link:hover {
+        border-color: var(--accent);
+      }
+
+      .github-link:active {
+        color: var(--accent);
+      }
+
+      .site-footer {
+        min-height: 5rem;
+        border-top: 1px solid rgb(23 25 21 / 28%);
+      }
+
+      @media (max-width: 42rem) {
+        .site-header {
+          min-height: 4.5rem;
+        }
+
+        .site-address {
+          text-align: right;
+        }
+
+        .site-main {
+          justify-content: flex-start;
+          padding: clamp(4.5rem, 16vh, 8rem) 0 3.5rem;
+        }
+
+        .headline {
+          font-size: clamp(4.25rem, 22vw, 8rem);
+        }
+
+        .intro {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-top: 3rem;
+        }
+
+        .status {
+          max-width: none;
+        }
+
+        .site-footer {
+          min-height: 4.5rem;
+        }
+      }
+
+      @media (max-width: 22rem) {
+        .site-header,
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.35rem;
+          padding: 0.8rem 0;
+        }
+
+        .site-address {
+          text-align: left;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <p class="wordmark">VexCoreAI</p>
+        <p class="site-address">vexcore.ai.id</p>
+      </header>
+
+      <main class="site-main">
+        <h1 class="headline"><span>VexCore</span><span>AI</span></h1>
+
+        <section class="intro" aria-label="Informasi situs">
+          <p class="status">Situs ini sedang disiapkan.</p>
+          <div>
+            <p class="invitation">
+              Sementara itu, lihat organisasi VexCoreAI di GitHub.
+            </p>
+            <a class="github-link" href="https://github.com/VexCoreAI">
+              Buka GitHub VexCoreAI
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p class="footer-copy">VexCoreAI</p>
+        <p class="footer-copy">vexcore.ai.id</p>
+      </footer>
+    </div>
+  </body>
+</html>
